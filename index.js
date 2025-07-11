@@ -4,8 +4,9 @@ var express = require('express');
 app = express();
 
 app.get("/one", function(req, res) {
-    
-    res.send("This is simple string response"); 
+    // send - method work for the response of your body 
+    // end - response your ending point 
+    res.end("This is simple string response"); 
 });
 
 app.post("/two", function(req, res) {
