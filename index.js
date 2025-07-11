@@ -3,16 +3,13 @@ var express = require('express');
 // Create the app
 app = express();
 
-app.get("/", function(req, res) {
-    res.send("Hello Page");
+app.get("/one", function(req, res) {
+    
+    res.send("This is simple string response"); 
 });
 
-app.post("/about", function(req, res) {
-    res.send("About Page");
-});
-
-app.delete("/contact", function(req, res) {
-    res.send("Contact Page");
+app.post("/two", function(req, res) {
+    res.send("This is post simple response");
 });
 
 app.listen(8000, function() {
