@@ -13,6 +13,11 @@ app.post("/two", function(req, res) {
     res.send("This is post simple response");
 });
 
+app.get("/three", function(req, res) {
+    // 401 - unathorized 
+    res.status(401).end("You don't have any permission");
+});
+
 app.listen(8000, function() {
     console.log("Server Run Success");
 });
