@@ -80,6 +80,12 @@ app.get("/eight", function(req, res) {
     res.end("Cookie Deleted Successfully");
 });
 
+// 63 - Working with Request
+// Post() : work with post data, with url and parameter, request header, body, multipart/form-data
+// Get() : create simple get request(simple or with url or parameter), catch 
+// Put()
+// Delete()
+
 app.listen(8000, function() {
     console.log("Server Run Success");
 });
