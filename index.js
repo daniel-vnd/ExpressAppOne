@@ -46,6 +46,19 @@ app.get("/five", function(req, res) {
     res.download("./uploads/about.jpg"); 
 });
 
+// Response Download
+app.get("/usa", function(req, res) {
+    // send - method work for the response of your body 
+    // end - response your ending point 
+    res.redirect("http://localhost:8000/india"); 
+});
+
+// Response Download
+app.get("/india", function(req, res) {
+    // send - method work for the response of your body 
+    // end - response your ending point 
+    res.send("This is india page"); 
+});
 
 
 app.listen(8000, function() {
