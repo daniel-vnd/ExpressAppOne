@@ -1,32 +1,23 @@
 const express = require('express');
-var multer = require('multer');
 
 // Create the app
 app = express();
 
-var storage = multer.diskStorage({
-    // Where the destination will be uploaded
-    destination: function(req, file, callback){
-        callback(null, './uploads');
-    },
-    // In particular with file original name
-    filename: function(req, file, callback) {
-        callback(null, file.originalname)
-    }
+app.use(function(req, res, next) {
+    console.log('I am from middleware validation');
+    next();
 });
 
-var upload = multer({storage: storage}).single('myfile');
+app.get("/", function(req, res) {
+    res.send('This is home page');
+});
 
-// https://www.npmjs.com/package/body-parser
-app.post("/", function(req, res) {
+app.get("/about", function(req, res) {
+    res.send('This is about page');
+});
 
-    upload(req, res, function(error) {
-        if (error) {
-            res.send("File Upload Failed");
-        } else {
-            res.send("File Upload Success");
-        }
-    })
+app.get("/contact", function(req, res) {
+    res.send('This is contact page');
 });
 
 app.listen(8000, function() {
