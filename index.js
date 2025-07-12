@@ -39,25 +39,27 @@ app.get("/four", function(req, res) {
     res.json(myJSONArray);
 });
 
-// Response Download
+// 58 - Response Download
 app.get("/five", function(req, res) {
-    // send - method work for the response of your body 
-    // end - response your ending point 
     res.download("./uploads/about.jpg"); 
 });
 
-// Response Download
+// 59 - Response Redirect
 app.get("/usa", function(req, res) {
-    // send - method work for the response of your body 
-    // end - response your ending point 
     res.redirect("http://localhost:8000/india"); 
 });
 
-// Response Download
+
 app.get("/india", function(req, res) {
-    // send - method work for the response of your body 
-    // end - response your ending point 
     res.send("This is india page"); 
+});
+
+// 60 - Response Header
+app.get("/six", function(req, res) {
+    res.append("name", "Kazy Ariyan"); 
+    res.append("city", "Dhaka"); 
+
+    res.status(201).end("This is Response Header");
 });
 
 
