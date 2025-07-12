@@ -5,10 +5,10 @@ app = express();
 
 
 app.post("/", function(req, res) {
-    let firstName = req.query.firstName;
-    let lastName = req.query.lastName;
+    let userName = req.header("userName");
+    let password = req.header("password");
     
-    res.send(firstName + " " + lastName);
+    res.send("User Name: " + userName + " Password: " + password);
 });
 
 app.listen(8000, function() {
