@@ -62,6 +62,15 @@ app.get("/six", function(req, res) {
     res.status(201).end("This is Response Header");
 });
 
+// 61 - Response Set Cookies Data
+// In browser go in debug(F12)->Application->Cookies
+app.get("/seven", function(req, res) {
+    res.cookie("name", "Kazy Ariyan"); 
+    res.cookie("city", "Dhaka"); 
+    res.cookie("age", "35 Years Old"); 
+
+    res.end("Cookie Set Successfully");
+});
 
 app.listen(8000, function() {
     console.log("Server Run Success");
