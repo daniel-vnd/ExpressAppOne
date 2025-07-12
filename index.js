@@ -5,7 +5,10 @@ app = express();
 
 
 app.post("/", function(req, res) {
-    res.send('This is simple Post Request')
+    let firstName = req.query.firstName;
+    let lastName = req.query.lastName;
+    
+    res.send(firstName + " " + lastName);
 });
 
 app.listen(8000, function() {
