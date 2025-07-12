@@ -1,18 +1,19 @@
-var express = require('express');
-const bodyParser = require('body-parser');
+const express = require('express');
+var multer = require('multer');
+var multer  = require('multer');
+
+var multer = multer();
 
 // Create the app
 app = express();
-
-// Use Body Parser and call it as JSON method
-app.use(bodyParser.json());
+app.use(multer.array());
+app.use(express.static('public'));
 
 // https://www.npmjs.com/package/body-parser
 app.post("/", function(req, res) {
     let JSONData = req.body;
-    let JSONString = JSON.stringify(JSONData);
 
-    res.send(JSONString);
+    res.send(JSON.stringify(JSONData));
 });
 
 app.listen(8000, function() {
