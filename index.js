@@ -72,6 +72,14 @@ app.get("/seven", function(req, res) {
     res.end("Cookie Set Successfully");
 });
 
+// 62 - Response Delete Cookies Data
+app.get("/eight", function(req, res) {
+    res.clearCookie("name"); 
+    res.clearCookie("city"); 
+
+    res.end("Cookie Deleted Successfully");
+});
+
 app.listen(8000, function() {
     console.log("Server Run Success");
 });
