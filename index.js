@@ -5,8 +5,9 @@ app = express();
 
 // In browser/postman write: http://localhost:8000?firstName=Daniel&lastName=Nicolae
 app.get("/", function(req, res) {
-    let firstName = req.query.firstName;
-    let lastName = req.query.lastName;
+
+    let firstName = req.header("firstName");
+    let lastName = req.header("firstName");
 
     res.end(firstName + " " + lastName); 
 });
