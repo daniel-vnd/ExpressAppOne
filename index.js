@@ -3,13 +3,14 @@ const express = require('express');
 // Create the app
 app = express();
 
-app.use(function(req, res, next) {
-    console.log('I am from middleware validation');
-    next();
-});
 
 app.get("/", function(req, res) {
     res.send('This is home page');
+});
+
+app.use("/about", function(req, res, next) {
+    console.log('I am from middleware validation only for about page');
+    next();
 });
 
 app.get("/about", function(req, res) {
